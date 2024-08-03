@@ -1,0 +1,75 @@
+html{
+    font-family: 'FC Iconic';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: gray;
+    background-position: center;
+    background: #202020 url(frieren.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header {
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size:48px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar a {
+    font-size: 24px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 100px;
+}
+
+/*
+img {
+    filter: grayscale(100%);
+}
+
+/*:hover {
+    filter: grayscale(0%);
+}*/
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+a:hover{
+    color: red;
+    text-decoration: underline;
+}
+div.footer{
+    color: white;
+    background-color: black;
+    width: 100%;
+    
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรแกรมคำนวนค่าดัชนีมวลกาย - BMI</title>
+    <style>
+        p {
+            text-align: justify;
+        }
+
+        #program {
+            color: green;
+            text-align: center;
+        }
+
+        .main {
+            text-align: center;
+            background-color: green;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .input-field {
+            width: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        #button {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        h2 {
+            color: red;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 id="program">โปรแกรมคำนวนค่าดัชนีมวลกาย - BMI</h1>
+    </div>
+    <div>
+        <p>ค่า BMI คือค่าดัชนีที่ใช้ชี้วัดความสมดุลของน้ำหนักตัว (กิโลกรัม) และส่วนสูง (เซนติเมตร) ซึ่งสามารถระบุได้ว่า
+            ตอนนี้รูปร่างของคนคนนั้นอยู่ในระดับใด ตั้งแต่อ้วนมากไปจนถึงผอมเกินไป</p>
+    </div>
+
+    <p>Body Mass Index (BMI) มีสูตรการคำนวณ = น้ำหนักตัว[Kg] / (ส่วนสูง[m] ยกกำลังสอง)
+        สูตรคำนวณเหมาะสำหรับใช้ประเมินผู้ที่มีอายุตั้งแต่ 20 ปีขึ้นไป ประโยชน์ของการวัดค่า BMI
+        เพื่อดูอัตราเสี่ยงต่อการเกิดโรคต่าง ๆ ตรวจสอบภาวะไขมันและความอ้วน
+        ดังนั้นการทำให้ร่างกายอยู่ในเกณฑ์ปกติจึงมีความสำคัญอย่างยิ่งกับผู้ที่ต้องการรักษาสุขภาพในระยะยาว</p>
+
+    <h1 class="main">ใส่ค่าน้ำหนัก - ส่วนสูงของคุณ</h1><br>
+
+    <center>
+        <div>
+            <p>น้ำหนัก (Kg):</p>
+            <input id="weight" class="input-field" type="text">
+        </div>
+        <div>
+            <p>ส่วนสูง (m):</p>
+            <input id="height" class="input-field" type="text">
+        </div><br>
+        <div id="button">
+            <button style="background-color: rgb(10, 139, 245); color: white;" onclick="calculateBMI()">Calculate BMI</button>
+        </div><br>
+        <div class="result">
+            <p>ค่า BMI ของคุณคือ:</p>
+            <input id="bmiValue" class="input-field" type="text" readonly>
+        </div>
+        <div class="result">
+            <p>ผลทดสอบ:</p>
+            <input id="bmiResult" class="input-field" type="text" readonly>
+        </div>
+    </center>
+
+    <center>
+        <h2>ค่าดัชนีมวลกาย - BMI</h2>
+        <p>อ้วนมาก = 30.0 ขึ้นไป</p>
+        <p>ค่อนข้างอันตราย เสี่ยงต่อการเกิดโรคร้ายแรงที่แฝงมากับความอ้วน หากค่า BMI อยู่ในระดับนี้ จะต้องปรับพฤติกรรมการทานอาหาร และควรเริ่มออกกำลังกาย และหากเลขยิ่งสูงกว่า 40.0 ยิ่งแสดงถึงความอ้วนที่มากขึ้น ควรไปตรวจสุขภาพ และปรึกษาแพทย์</p>
+        <img style="width: 70%;" src="frieren.jpg" alt="BMI Chart">
+    </center>
+
+    <script>
+        function calculateBMI() {
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
+            let bmi = (weight / (height * height)).toFixed(2);
+            document.getElementById("bmiValue").value = bmi;
+
+            let result = '';
+            if (bmi >= 30) {
+                result = 'อ้วนมาก';
+            } else if (bmi >= 25) {
+                result = 'อ้วน';
+            } else if (bmi >= 18.5) {
+                result = 'น้ำหนักปกติ';
+            } else {
+                result = 'ผอม';
+            }
+
+            document.getElementById("bmiResult").value = result;
+        }
+    </script>
+</body>
+
+</html>
